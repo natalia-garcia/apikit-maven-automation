@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestSuite" time="36.82" tests="5" errors="0" skipped="0" failures="4">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
+    <property name="java.vm.version" value="20.65-b04-462"/>
+    <property name="awt.nativeDoubleBuffering" value="true"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="mrj.build" value="11M4609"/>
+    <property name="java.vm.vendor" value="Apple Inc."/>
+    <property name="java.vendor.url" value="http://www.apple.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/natalia.garcia/IdeaProjects/apikit-standalone-automation"/>
+    <property name="java.runtime.version" value="1.6.0_65-b14-462-11M4609"/>
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment"/>
+    <property name="basedir" value="/Users/natalia.garcia/IdeaProjects/apikit-standalone-automation"/>
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.2.1/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="MacRoman"/>
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="surefire.test.class.path" value="/Users/natalia.garcia/IdeaProjects/apikit-standalone-automation/target/test-classes:/Users/natalia.garcia/IdeaProjects/apikit-standalone-automation/target/classes:/Users/natalia.garcia/.m2/repository/org/raml/raml-parser/0.8.4/raml-parser-0.8.4.jar:/Users/natalia.garcia/.m2/repository/org/yaml/snakeyaml/1.13/snakeyaml-1.13.jar:/Users/natalia.garcia/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar:/Users/natalia.garcia/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/natalia.garcia/.m2/repository/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar:/Users/natalia.garcia/.m2/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar:/Users/natalia.garcia/.m2/repository/commons-digester/commons-digester/1.6/commons-digester-1.6.jar:/Users/natalia.garcia/.m2/repository/commons-collections/commons-collections/2.1/commons-collections-2.1.jar:/Users/natalia.garcia/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/Users/natalia.garcia/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/natalia.garcia/.m2/repository/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar:/Users/natalia.garcia/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/natalia.garcia/.m2/repository/org/kitchen-eel/json-schema-validator/1.2.2/json-schema-validator-1.2.2.jar:/Users/natalia.garcia/.m2/repository/org/mozilla/rhino/1.7R4/rhino-1.7R4.jar:/Users/natalia.garcia/.m2/repository/javax/mail/mailapi/1.4.3/mailapi-1.4.3.jar:/Users/natalia.garcia/.m2/repository/joda-time/joda-time/2.1/joda-time-2.1.jar:/Users/natalia.garcia/.m2/repository/com/google/guava/guava/13.0/guava-13.0.jar:/Users/natalia.garcia/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.1.1/jackson-databind-2.1.1.jar:/Users/natalia.garcia/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.1.1/jackson-annotations-2.1.1.jar:/Users/natalia.garcia/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.1.1/jackson-core-2.1.1.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-java/2.41.0/selenium-java-2.41.0.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/2.41.0/selenium-chrome-driver-2.41.0.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/2.41.0/selenium-remote-driver-2.41.0.jar:/Users/natalia.garcia/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar:/Users/natalia.garcia/.m2/repository/org/json/json/20080701/json-20080701.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-htmlunit-driver/2.41.0/selenium-htmlunit-driver-2.41.0.jar:/Users/natalia.garcia/.m2/repository/net/sourceforge/htmlunit/htmlunit/2.13/htmlunit-2.13.jar:/Users/natalia.garcia/.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar:/Users/natalia.garcia/.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar:/Users/natalia.garcia/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.13/htmlunit-core-js-2.13.jar:/Users/natalia.garcia/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar:/Users/natalia.garcia/.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.19/nekohtml-1.9.19.jar:/Users/natalia.garcia/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.11/cssparser-0.9.11.jar:/Users/natalia.garcia/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar:/Users/natalia.garcia/.m2/repository/org/eclipse/jetty/jetty-websocket/8.1.12.v20130726/jetty-websocket-8.1.12.v20130726.jar:/Users/natalia.garcia/.m2/repository/org/eclipse/jetty/jetty-util/8.1.12.v20130726/jetty-util-8.1.12.v20130726.jar:/Users/natalia.garcia/.m2/repository/org/eclipse/jetty/jetty-io/8.1.12.v20130726/jetty-io-8.1.12.v20130726.jar:/Users/natalia.garcia/.m2/repository/org/eclipse/jetty/jetty-http/8.1.12.v20130726/jetty-http-8.1.12.v20130726.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/2.41.0/selenium-firefox-driver-2.41.0.jar:/Users/natalia.garcia/.m2/repository/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/2.41.0/selenium-ie-driver-2.41.0.jar:/Users/natalia.garcia/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar:/Users/natalia.garcia/.m2/repository/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/2.41.0/selenium-safari-driver-2.41.0.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-support/2.41.0/selenium-support-2.41.0.jar:/Users/natalia.garcia/.m2/repository/org/seleniumhq/selenium/selenium-api/2.41.0/selenium-api-2.41.0.jar:/Users/natalia.garcia/.m2/repository/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar:/Users/natalia.garcia/.m2/repository/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar:/Users/natalia.garcia/.m2/repository/com/jayway/restassured/rest-assured/2.3.1/rest-assured-2.3.1.jar:/Users/natalia.garcia/.m2/repository/org/codehaus/groovy/groovy/2.2.1/groovy-2.2.1.jar:/Users/natalia.garcia/.m2/repository/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar:/Users/natalia.garcia/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/natalia.garcia/.m2/repository/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar:/Users/natalia.garcia/.m2/repository/org/ow2/asm/asm-commons/4.1/asm-commons-4.1.jar:/Users/natalia.garcia/.m2/repository/org/ow2/asm/asm/4.1/asm-4.1.jar:/Users/natalia.garcia/.m2/repository/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar:/Users/natalia.garcia/.m2/repository/org/codehaus/groovy/groovy-xml/2.2.1/groovy-xml-2.2.1.jar:/Users/natalia.garcia/.m2/repository/org/apache/httpcomponents/httpmime/4.2.6/httpmime-4.2.6.jar:/Users/natalia.garcia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/natalia.garcia/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar:/Users/natalia.garcia/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/natalia.garcia/.m2/repository/com/jayway/restassured/json-path/2.3.1/json-path-2.3.1.jar:/Users/natalia.garcia/.m2/repository/org/codehaus/groovy/groovy-json/2.2.1/groovy-json-2.2.1.jar:/Users/natalia.garcia/.m2/repository/com/jayway/restassured/rest-assured-common/2.3.1/rest-assured-common-2.3.1.jar:/Users/natalia.garcia/.m2/repository/com/jayway/restassured/xml-path/2.3.1/xml-path-2.3.1.jar:/Users/natalia.garcia/.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar:/Users/natalia.garcia/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/natalia.garcia/.m2/repository/org/apache/httpcomponents/httpclient/4.3.4/httpclient-4.3.4.jar:/Users/natalia.garcia/.m2/repository/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar:/Users/natalia.garcia/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar:/Users/natalia.garcia/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar:/Users/natalia.garcia/.m2/repository/org/testng/testng/6.8.8/testng-6.8.8.jar:/Users/natalia.garcia/.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar:/Users/natalia.garcia/.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar:/Users/natalia.garcia/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.17/surefire-testng-utils-2.17.jar:/Users/natalia.garcia/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.17/surefire-grouper-2.17.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.9.3"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/natalia.garcia"/>
+    <property name="user.timezone" value="GMT-03:00"/>
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="file.encoding" value="MacRoman"/>
+    <property name="user.name" value="natalia.garcia"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.2.1/libexec/boot/plexus-classworlds-2.5.1.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="apple.awt.CToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_65"/>
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext"/>
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar"/>
+    <property name="java.vendor" value="Apple Inc."/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.2.1/libexec"/>
+    <property name="localRepository" value="/Users/natalia.garcia/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="mrj.version" value="1070.1.6.0_65-462"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testDocumentationTitle" classname="org.mule.test.MavenAutomationTest" time="30.311">
+    <failure message="Timed out after 30 seconds waiting for presence of element located by: By.selector: h2.ng-binding&#10;Build info: version: &apos;2.41.0&apos;, revision: &apos;3192d8a6c4449dc285928ba024779344f5423c58&apos;, time: &apos;2014-03-27 11:29:39&apos;&#10;System info: host: &apos;Natalias-MacBook-Air.local&apos;, ip: &apos;172.16.21.237&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.3&apos;, java.version: &apos;1.6.0_65&apos;&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Timed out after 30 seconds waiting for presence of element located by: By.selector: h2.ng-binding
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'Natalias-MacBook-Air.local', ip: '172.16.21.237', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.3', java.version: '1.6.0_65'
+Driver info: driver.version: unknown
+	at sun.reflect.GeneratedConstructorAccessor28.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:437)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:425)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:730)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:106)
+	at org.openqa.selenium.support.ui.ExpectedConditions$3.apply(ExpectedConditions.java:103)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at org.mule.classes.Console.findElementByCssSelector(Console.java:49)
+	at org.mule.classes.Console.getDocumentationTitle(Console.java:56)
+	at org.mule.test.MavenAutomationTest.testDocumentationTitle(MavenAutomationTest.java:74)
+</failure>
+    <system-out><![CDATA[Running: sh /Users/natalia.garcia/dev/APIkit/interop/stopMule.sh -p /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0 -s mule
+*********************************************
+*  Set MULE_HOME
+*********************************************
+export MULE_HOME=/Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0
+*********************************************
+*  Stop Mule Server
+*********************************************
+bin/mule stop
+MULE_HOME is set to /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0
+Stopping Mule Enterprise Edition...
+Mule Enterprise Edition was not running.
+Done. Exit Value:0
+Running: sh /Users/natalia.garcia/dev/APIkit/interop/mavenAutomation.sh -p /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0 -a /Users/natalia.garcia/dev/APIkit/interop -r /Users/natalia.garcia/Drive/TestCases/RAMLs/interop/interop.raml -v 1.4.1 -s mule
+*********************************************
+*  Set MULE_HOME
+*********************************************
+export MULE_HOME=/Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0
+*********************************************
+*  Empty apps folder in server
+*********************************************
+rm -rf /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0/apps/interopTest-1.0 /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0/apps/interopTest-1.0-anchor.txt
+*********************************************
+*  Generate APIkit project
+*********************************************
+mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=1.4.1 -DgroupId=org.mule -DartifactId=interopTest -Dversion=1.0 -B
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-archetype-plugin:2.2:generate (default-cli) @ standalone-pom >>>
+[INFO] 
+[INFO] <<< maven-archetype-plugin:2.2:generate (default-cli) @ standalone-pom <<<
+[INFO] 
+[INFO] --- maven-archetype-plugin:2.2:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Batch mode
+[WARNING] Archetype not found in any catalog. Falling back to central repository (http://repo1.maven.org/maven2).
+[WARNING] Use -DarchetypeRepository=<your repository> if archetype's repository is elsewhere.
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: apikit-archetype:1.4.1
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: groupId, Value: org.mule
+[INFO] Parameter: artifactId, Value: interopTest
+[INFO] Parameter: version, Value: 1.0
+[INFO] Parameter: package, Value: org.mule
+[INFO] Parameter: packageInPathFormat, Value: org/mule
+[INFO] Parameter: package, Value: org.mule
+[INFO] Parameter: version, Value: 1.0
+[INFO] Parameter: groupId, Value: org.mule
+[INFO] Parameter: artifactId, Value: interopTest
+[INFO] project created from Archetype in dir: /Users/natalia.garcia/dev/APIkit/interop/interopTest
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 21.291 s
+[INFO] Finished at: 2014-07-25T17:10:31-03:00
+[INFO] Final Memory: 10M/81M
+[INFO] ------------------------------------------------------------------------
+/Users/natalia.garcia/dev/APIkit/interop/interopTest
+*********************************************
+*  Original RAML
+*********************************************
+*********************************************
+*  Copy RAML file to api folder
+*********************************************
+cp /Users/natalia.garcia/Drive/TestCases/RAMLs/interop/interop.raml src/main/api
+*********************************************
+*  Remove api.raml
+*********************************************
+rm src/main/api/api.raml
+*********************************************
+*  Rename RAML file
+*********************************************
+mv src/main/api/interop.raml src/main/api/api.raml
+total 24
+drwxr-xr-x  3 natalia.garcia  staff   102 Jul 25 17:10 .
+drwxr-xr-x  6 natalia.garcia  staff   204 Jul 25 17:10 ..
+-rw-r--r--  1 natalia.garcia  staff  9210 Jul 25 17:10 api.raml
+*********************************************
+*  Scaffold project
+*********************************************
+mvn org.mule.tools:apikit-maven-plugin:1.4.1:create
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Mule APIKit Application 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- apikit-maven-plugin:1.4.1:create (default-cli) @ interopTest ---
+[INFO] Processing the following RAML files: [/Users/natalia.garcia/dev/APIkit/interop/interopTest/src/main/api/api.raml]
+[INFO] Processing the following xml files as mule configs: [/Users/natalia.garcia/dev/APIkit/interop/interopTest/src/main/app/mule-config.xml]
+[INFO] The following RAML files were parsed correctly: [/Users/natalia.garcia/dev/APIkit/interop/interopTest/src/main/api/api.raml]
+[INFO] Adding new apikit:flows to existing files for the following operations: [ResourceActionPair{uri='/api/items/{itemId}', verb='GET'}, ResourceActionPair{uri='/api/items', verb='POST'}, ResourceActionPair{uri='/api/items', verb='GET'}, ResourceActionPair{uri='/api/items/{itemId}', verb='PUT'}, ResourceActionPair{uri='/api/items/{itemId}', verb='DELETE'}]
+[INFO] Updating file: [/Users/natalia.garcia/dev/APIkit/interop/interopTest/src/main/app/mule-config.xml]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.514 s
+[INFO] Finished at: 2014-07-25T17:10:35-03:00
+[INFO] Final Memory: 6M/81M
+[INFO] ------------------------------------------------------------------------
+*********************************************
+*  Install app
+*********************************************
+mvn clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] Using the builder org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder with a thread count of 1
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Mule APIKit Application 1.0
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ interopTest ---
+[INFO] 
+[INFO] --- mule-appkit-maven-plugin:3.4:attach-test-resources (default-attach-test-resources) @ interopTest ---
+[INFO] attaching test resource /Users/natalia.garcia/dev/APIkit/interop/interopTest/src/main/app
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ interopTest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- mule-appkit-maven-plugin:3.4:filter-resources (default-filter-resources) @ interopTest ---
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ interopTest ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ interopTest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/natalia.garcia/dev/APIkit/interop/interopTest/src/test/resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ interopTest ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.6-MULE-4:test (default-test) @ interopTest ---
+[INFO] Surefire report directory: /Users/natalia.garcia/dev/APIkit/interop/interopTest/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- mule-appkit-maven-plugin:3.4:mule (default-mule) @ interopTest ---
+[INFO] Copying classes directly
+[INFO] Adding <com.googlecode.json-simple:json-simple:jar:1.1.1> as a lib
+[INFO] Adding <commons-validator:commons-validator:jar:1.3.1> as a lib
+[INFO] Adding <xml-apis:xml-apis:jar:1.0.b2> as a lib
+[INFO] Adding <commons-digester:commons-digester:jar:1.6> as a lib
+[INFO] Adding <org.mule.modules:mule-module-devkit-support:jar:3.4.0> as a lib
+[INFO] Adding <javax.inject:javax.inject:jar:1> as a lib
+[INFO] Adding <org.mule.tools.devkit:mule-devkit-annotations:jar:3.4.2> as a lib
+[INFO] Adding <org.mule.modules:mule-module-apikit:jar:1.4.1> as a lib
+[INFO] Adding <org.yaml:snakeyaml:jar:1.13> as a lib
+[INFO] Adding <org.mule.modules:mule-module-cors:jar:1.1> as a lib
+[INFO] Adding <org.raml:raml-parser:jar:0.8.6> as a lib
+[INFO] Adding <commons-logging:commons-logging:jar:1.1.1> as a lib
+[INFO] Building zip: /Users/natalia.garcia/dev/APIkit/interop/interopTest/target/interopTest-1.0.zip
+[INFO] 
+[INFO] --- maven-install-plugin:2.3.1:install (default-install) @ interopTest ---
+[INFO] No primary artifact to install, installing attached artifacts instead.
+[INFO] Installing /Users/natalia.garcia/dev/APIkit/interop/interopTest/pom.xml to /Users/natalia.garcia/.m2/repository/org/mule/interopTest/1.0/interopTest-1.0.pom
+[INFO] Installing /Users/natalia.garcia/dev/APIkit/interop/interopTest/target/interopTest-1.0.zip to /Users/natalia.garcia/.m2/repository/org/mule/interopTest/1.0/interopTest-1.0.zip
+[INFO] 
+[INFO] --- mule-appkit-maven-plugin:3.4:install (default-install) @ interopTest ---
+[INFO] Copying /Users/natalia.garcia/dev/APIkit/interop/interopTest/target/interopTest-1.0.zip to /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0/apps/interopTest-1.0.temp
+[INFO] Renaming /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0/apps/interopTest-1.0.temp to /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0/apps/interopTest-1.0.zip
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.111 s
+[INFO] Finished at: 2014-07-25T17:10:42-03:00
+[INFO] Final Memory: 9M/81M
+[INFO] ------------------------------------------------------------------------
+cd /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0
+bin/mule start
+MULE_HOME is set to /Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0
+Starting Mule Enterprise Edition...
+Done. Exit Value:0
+]]></system-out>
+    <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.raml.parser.builder.ImplicitMapEntryBuilder).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+log4j:WARN No appenders could be found for logger (org.apache.commons.beanutils.PropertyUtils).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+  </testcase>
+  <testcase name="testGetItemBody" classname="org.mule.test.MavenAutomationTest" time="1.974">
+    <failure message="element not visible&#10;  (Session info: chrome=36.0.1985.125)&#10;  (Driver info: chromedriver=2.10.267517,platform=Mac OS X 10.9.3 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 68 milliseconds&#10;Build info: version: &apos;2.41.0&apos;, revision: &apos;3192d8a6c4449dc285928ba024779344f5423c58&apos;, time: &apos;2014-03-27 11:29:39&apos;&#10;System info: host: &apos;Natalias-MacBook-Air.local&apos;, ip: &apos;172.16.21.237&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.3&apos;, java.version: &apos;1.6.0_65&apos;&#10;Session ID: 7ee91f970bb7eb6ab789e3e20815f8d1&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/.org.chromium.Chromium.zgZCa3}, rotatable=false, locationContextEnabled=true, version=36.0.1985.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=false, takesScreenshot=true}]" type="org.openqa.selenium.ElementNotVisibleException">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=36.0.1985.125)
+  (Driver info: chromedriver=2.10.267517,platform=Mac OS X 10.9.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 68 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'Natalias-MacBook-Air.local', ip: '172.16.21.237', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.3', java.version: '1.6.0_65'
+Session ID: 7ee91f970bb7eb6ab789e3e20815f8d1
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/.org.chromium.Chromium.zgZCa3}, rotatable=false, locationContextEnabled=true, version=36.0.1985.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at org.mule.test.MavenAutomationTest.testGetItemBody(MavenAutomationTest.java:151)
+</failure>
+  </testcase>
+  <testcase name="testGetItemResponseCode" classname="org.mule.test.MavenAutomationTest" time="1.766">
+    <failure message="unknown error: Element is not clickable at point (1203, 153). Other element would receive the click: &lt;div class=&quot;modifiers ng-scope&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=36.0.1985.125)&#10;  (Driver info: chromedriver=2.10.267517,platform=Mac OS X 10.9.3 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 59 milliseconds&#10;Build info: version: &apos;2.41.0&apos;, revision: &apos;3192d8a6c4449dc285928ba024779344f5423c58&apos;, time: &apos;2014-03-27 11:29:39&apos;&#10;System info: host: &apos;Natalias-MacBook-Air.local&apos;, ip: &apos;172.16.21.237&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.3&apos;, java.version: &apos;1.6.0_65&apos;&#10;Session ID: 7ee91f970bb7eb6ab789e3e20815f8d1&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/.org.chromium.Chromium.zgZCa3}, rotatable=false, locationContextEnabled=true, version=36.0.1985.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=false, takesScreenshot=true}]" type="org.openqa.selenium.WebDriverException"><![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element is not clickable at point (1203, 153). Other element would receive the click: <div class="modifiers ng-scope">...</div>
+  (Session info: chrome=36.0.1985.125)
+  (Driver info: chromedriver=2.10.267517,platform=Mac OS X 10.9.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 59 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'Natalias-MacBook-Air.local', ip: '172.16.21.237', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.3', java.version: '1.6.0_65'
+Session ID: 7ee91f970bb7eb6ab789e3e20815f8d1
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/.org.chromium.Chromium.zgZCa3}, rotatable=false, locationContextEnabled=true, version=36.0.1985.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at org.mule.test.MavenAutomationTest.testGetItemResponseCode(MavenAutomationTest.java:119)
+]]></failure>
+  </testcase>
+  <testcase name="testGetItemsResponseCode" classname="org.mule.test.MavenAutomationTest" time="2.056">
+    <failure message="element not visible&#10;  (Session info: chrome=36.0.1985.125)&#10;  (Driver info: chromedriver=2.10.267517,platform=Mac OS X 10.9.3 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 60 milliseconds&#10;Build info: version: &apos;2.41.0&apos;, revision: &apos;3192d8a6c4449dc285928ba024779344f5423c58&apos;, time: &apos;2014-03-27 11:29:39&apos;&#10;System info: host: &apos;Natalias-MacBook-Air.local&apos;, ip: &apos;172.16.21.237&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.9.3&apos;, java.version: &apos;1.6.0_65&apos;&#10;Session ID: 7ee91f970bb7eb6ab789e3e20815f8d1&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/.org.chromium.Chromium.zgZCa3}, rotatable=false, locationContextEnabled=true, version=36.0.1985.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=false, takesScreenshot=true}]" type="org.openqa.selenium.ElementNotVisibleException">org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=36.0.1985.125)
+  (Driver info: chromedriver=2.10.267517,platform=Mac OS X 10.9.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'Natalias-MacBook-Air.local', ip: '172.16.21.237', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.9.3', java.version: '1.6.0_65'
+Session ID: 7ee91f970bb7eb6ab789e3e20815f8d1
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{platform=MAC, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=/var/folders/jy/xtfxd5yj64lbcx7s69jj_rph0000gp/T/.org.chromium.Chromium.zgZCa3}, rotatable=false, locationContextEnabled=true, version=36.0.1985.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, nativeEvents=true, webStorageEnabled=true, applicationCacheEnabled=false, takesScreenshot=true}]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+	at org.mule.test.MavenAutomationTest.testGetItemsResponseCode(MavenAutomationTest.java:93)
+</failure>
+  </testcase>
+  <testcase name="testTitle" classname="org.mule.test.MavenAutomationTest" time="0.713"/>
+</testsuite>

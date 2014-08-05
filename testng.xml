@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="APIkit Standalone" verbose="1" >
+    <test name="APIkit Standalone">
+        <classes>
+            <class name="org.mule.test.MavenAutomationTest" />
+        </classes>
+    </test>
+</suite>
