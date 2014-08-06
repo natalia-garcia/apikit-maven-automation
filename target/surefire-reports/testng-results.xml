@@ -2,17 +2,17 @@
 <testng-results skipped="5" failed="0" total="5" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="APIkit Standalone" duration-ms="131044" started-at="2014-08-06T20:22:11Z" finished-at="2014-08-06T20:24:22Z">
+  <suite name="APIkit Standalone" duration-ms="152501" started-at="2014-08-06T21:17:20Z" finished-at="2014-08-06T21:19:53Z">
     <groups>
     </groups>
-    <test name="APIkit Standalone" duration-ms="131044" started-at="2014-08-06T20:22:11Z" finished-at="2014-08-06T20:24:22Z">
+    <test name="APIkit Standalone" duration-ms="152501" started-at="2014-08-06T21:17:20Z" finished-at="2014-08-06T21:19:53Z">
       <class name="org.mule.test.MavenAutomationTest">
-        <test-method status="FAIL" signature="deployAndRunMule()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="deployAndRunMule" is-config="true" duration-ms="0" started-at="2014-08-06T17:22:11Z" finished-at="2014-08-06T17:22:11Z">
+        <test-method status="FAIL" signature="deployAndRunMule()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="deployAndRunMule" is-config="true" duration-ms="0" started-at="2014-08-06T18:17:20Z" finished-at="2014-08-06T18:17:20Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
 	at org.mule.classes.Utilities.verifyStatusCode(Utilities.java:123)
-	at org.mule.test.MavenAutomationTest.deployAndRunMule(MavenAutomationTest.java:60)
+	at org.mule.test.MavenAutomationTest.deployAndRunMule(MavenAutomationTest.java:59)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
@@ -75,30 +75,30 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deployAndRunMule -->
-        <test-method status="SKIP" signature="testDocumentationTitle()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="testDocumentationTitle" duration-ms="1" started-at="2014-08-06T17:24:22Z" finished-at="2014-08-06T17:24:22Z">
+        <test-method status="SKIP" signature="testDocumentationTitle()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="testDocumentationTitle" duration-ms="1" started-at="2014-08-06T18:19:53Z" finished-at="2014-08-06T18:19:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDocumentationTitle -->
-        <test-method status="SKIP" signature="testGetItemBody()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="testGetItemBody" duration-ms="0" started-at="2014-08-06T17:24:22Z" finished-at="2014-08-06T17:24:22Z">
+        <test-method status="SKIP" signature="testGetItemBody()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="testGetItemBody" duration-ms="0" started-at="2014-08-06T18:19:53Z" finished-at="2014-08-06T18:19:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetItemBody -->
-        <test-method status="SKIP" signature="testGetItemResponseCode()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="testGetItemResponseCode" duration-ms="0" started-at="2014-08-06T17:24:22Z" finished-at="2014-08-06T17:24:22Z">
+        <test-method status="SKIP" signature="testGetItemResponseCode()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="testGetItemResponseCode" duration-ms="0" started-at="2014-08-06T18:19:53Z" finished-at="2014-08-06T18:19:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetItemResponseCode -->
-        <test-method status="SKIP" signature="testGetItemsResponseCode()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="testGetItemsResponseCode" duration-ms="0" started-at="2014-08-06T17:24:22Z" finished-at="2014-08-06T17:24:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testGetItemsResponseCode -->
-        <test-method status="SKIP" signature="stopMule()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="stopMule" is-config="true" duration-ms="0" started-at="2014-08-06T17:24:22Z" finished-at="2014-08-06T17:24:22Z">
+        <test-method status="SKIP" signature="stopMule()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="stopMule" is-config="true" duration-ms="0" started-at="2014-08-06T18:19:53Z" finished-at="2014-08-06T18:19:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopMule -->
-        <test-method status="SKIP" signature="testTitle()[pri:0, instance:org.mule.test.MavenAutomationTest@6ec12f3]" name="testTitle" duration-ms="0" started-at="2014-08-06T17:24:22Z" finished-at="2014-08-06T17:24:22Z">
+        <test-method status="SKIP" signature="testTitle()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="testTitle" duration-ms="0" started-at="2014-08-06T18:19:53Z" finished-at="2014-08-06T18:19:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTitle -->
+        <test-method status="SKIP" signature="testGetItemsResponseCode()[pri:0, instance:org.mule.test.MavenAutomationTest@a431693]" name="testGetItemsResponseCode" duration-ms="0" started-at="2014-08-06T18:19:53Z" finished-at="2014-08-06T18:19:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetItemsResponseCode -->
       </class> <!-- org.mule.test.MavenAutomationTest -->
     </test> <!-- APIkit Standalone -->
   </suite> <!-- APIkit Standalone -->

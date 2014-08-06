@@ -62,7 +62,7 @@ public class Console {
     }
 
     public WebElement findElementByCssSelector(final String cssSelector) {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 30);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 50);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
         WebElement webElement = driver.findElementByCssSelector(cssSelector);

@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 131.531 sec <<< FAILURE! - in TestSuite
-deployAndRunMule(org.mule.test.MavenAutomationTest)  Time elapsed: 131.403 sec  <<< FAILURE!
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 153.014 sec <<< FAILURE! - in TestSuite
+deployAndRunMule(org.mule.test.MavenAutomationTest)  Time elapsed: 152.895 sec  <<< FAILURE!
 java.lang.NullPointerException: null
 	at org.mule.classes.Utilities.verifyStatusCode(Utilities.java:123)
-	at org.mule.test.MavenAutomationTest.deployAndRunMule(MavenAutomationTest.java:60)
+	at org.mule.test.MavenAutomationTest.deployAndRunMule(MavenAutomationTest.java:59)
 

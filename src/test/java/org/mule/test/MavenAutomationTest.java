@@ -55,7 +55,7 @@ public class MavenAutomationTest {
         File deployedApp = new File(mule_home + "/apps/interopTest-1.0");
         Utilities.verifyAppHasBeenDeployed(deployedApp);
 
-        Thread.sleep(30000);
+        Thread.sleep(50000);
         Utilities.verifyStatusCode(raml.getBaseUri() + "/items");
 
         console = new Console();
