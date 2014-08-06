@@ -28,14 +28,12 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class MavenAutomationTest {
 
-    private static String mule_home = System.getProperty("MULE_HOME");
-    private static String muleStartCommand = System.getProperty("MULE_START_COMMAND");
-    private static String testFolder = "/Users/natalia.garcia/dev/APIkit/interop";
-    private static String shellScriptFolder = "/Users/natalia.garcia/dev/APIkit/interop";
-    private static String pathToRaml = "/Users/natalia.garcia/Drive/TestCases/RAMLs/interop/interop.raml";
-    private static String apikitVersion = "1.4.1";
-    private static Console console;
-    private static Raml raml;
+    private String mule_home = System.getProperty("MULE_HOME");
+    private String muleStartCommand = System.getProperty("MULE_START_COMMAND");
+
+    private String apikitVersion = "1.4.1";
+    private Console console;
+    private Raml raml;
 
     @org.testng.annotations.Factory(dataProviderClass= MuleDataProvider.class,dataProvider="muleDataProvider")
     public MavenAutomationTest(String mule_home, String muleStartCommand) throws MalformedURLException {
@@ -44,9 +42,15 @@ public class MavenAutomationTest {
     }
 
     @BeforeClass
-    public static void deployAndRunMule() throws IOException, InterruptedException {
+    public void deployAndRunMule() throws IOException, InterruptedException {
+
+        String shellScriptFolder = getClass().getResource("/stopMule.sh").getPath().replace("stopMule.sh", "");
+        String pathToRaml = getClass().getResource("/interop.raml").getPath();
+        String testFolder = pathToRaml.replace("interop.raml", "");
+
         raml = Utilities.getRamlFromFile();
-        Utilities.executeCommand("sh " + shellScriptFolder + "/stopMule.sh -p " + mule_home + " -s " + muleStartCommand);
+//        Utilities.executeCommand("sh " + shellScriptFolder + "/stopMule.sh -p " + mule_home + " -s " + muleStartCommand);
+        Utilities.executeCommand("sh " +  getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);
         Utilities.createAndDeployProject(shellScriptFolder, mule_home, testFolder, pathToRaml, apikitVersion, muleStartCommand);
 
         File deployedApp = new File(mule_home + "/apps/interopTest-1.0");
@@ -163,9 +167,9 @@ public class MavenAutomationTest {
     }
 
     @AfterClass
-    public static void stopMule() throws IOException {
+    public void stopMule() throws IOException {
         console.quit();
-        Utilities.executeCommand("sh " + shellScriptFolder + "/stopMule.sh -p " + mule_home + " -s " + muleStartCommand);
+        Utilities.executeCommand("sh " + getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);
     }
 
 
