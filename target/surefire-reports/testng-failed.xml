@@ -5,11 +5,11 @@
     <classes>
       <class name="org.mule.test.MavenAutomationTest">
         <methods>
+          <include name="testTitle"/>
           <include name="testGetItemResponseCode"/>
           <include name="testDocumentationTitle"/>
           <include name="deployAndRunMule"/>
           <include name="testGetItemsResponseCode"/>
-          <include name="stopMule"/>
           <include name="testGetItemBody"/>
         </methods>
       </class> <!-- org.mule.test.MavenAutomationTest -->

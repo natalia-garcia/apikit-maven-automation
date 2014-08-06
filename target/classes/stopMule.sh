@@ -4,16 +4,20 @@ if [ "$#" -eq 0 ]
 then
   echo "Please, specify MULE_HOME: "
   echo "-p <path/to/standalone/server> (required)"
-  echo "Example: sh stopMule.sh -p /Users/myUser/Standalone/ "
+  echo "-s <muleStartCommand> (required)"
+  echo "Example: sh stopMule.sh -p /Users/myUser/Standalone/ -s gateway"
   exit 1
 fi
 
 
-while getopts “p:” OPTION
+while getopts “p:s:” OPTION
 do
      case $OPTION in
          p)
              standaloneFolder=$OPTARG
+             ;;
+         s)
+             muleStartupCommand=$OPTARG
              ;;
      esac
 done
@@ -24,6 +28,12 @@ then
      exit 1
 fi
 
+if [[ -z $muleStartupCommand ]]
+then
+     echo "Mule startup command is missing. Use -s option to specify the command. "
+     exit 1
+fi
+
 echo "*********************************************"
 echo "*  Set MULE_HOME"
 echo "*********************************************"
@@ -31,9 +41,10 @@ echo export MULE_HOME=$standaloneFolder
 export MULE_HOME=$standaloneFolder
 
 cd $MULE_HOME
+rm conf/muleLicenseKey.lic; touch conf/.lic-mule
 
 echo "*********************************************"
 echo "*  Stop Mule Server"
 echo "*********************************************"
-echo bin/mule stop
-bin/mule stop
+echo bin/$muleStartupCommand stop
+bin/$muleStartupCommand stop

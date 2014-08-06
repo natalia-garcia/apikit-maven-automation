@@ -44,12 +44,11 @@ public class MavenAutomationTest {
     @BeforeClass
     public void deployAndRunMule() throws IOException, InterruptedException {
 
-        String shellScriptFolder = getClass().getResource("/stopMule.sh").getPath().replace("stopMule.sh", "");
+        String shellScriptFolder = getClass().getResource("/stopMule.sh").getPath().replace("/stopMule.sh", "");
         String pathToRaml = getClass().getResource("/interop.raml").getPath();
-        String testFolder = pathToRaml.replace("interop.raml", "");
+        String testFolder = pathToRaml.replace("/interop.raml", "");
 
         raml = Utilities.getRamlFromFile();
-//        Utilities.executeCommand("sh " + shellScriptFolder + "/stopMule.sh -p " + mule_home + " -s " + muleStartCommand);
         Utilities.executeCommand("sh " +  getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);
         Utilities.createAndDeployProject(shellScriptFolder, mule_home, testFolder, pathToRaml, apikitVersion, muleStartCommand);
 
