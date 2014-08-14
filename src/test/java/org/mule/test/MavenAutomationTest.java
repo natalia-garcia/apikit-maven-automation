@@ -28,18 +28,18 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class MavenAutomationTest {
 
-    private String mule_home = System.getProperty("MULE_HOME");
-    private String muleStartCommand = System.getProperty("MULE_START_COMMAND");
+    private String mule_home = getClass().getResource("/distributions/someFile.txt").getPath().replace("someFile.txt","") + "mule-enterprise-standalone" + "-" + System.getProperty("mule.version");
+    private String muleStartCommand = System.getProperty("mule.start.command");
 
-    private String apikitVersion = "1.4.1";
+    private String apikitVersion = System.getProperty("apikit.version");
     private Console console;
     private Raml raml;
 
-    @org.testng.annotations.Factory(dataProviderClass= MuleDataProvider.class,dataProvider="muleDataProvider")
-    public MavenAutomationTest(String mule_home, String muleStartCommand) throws MalformedURLException {
-        this.mule_home = mule_home;
-        this.muleStartCommand = muleStartCommand;
-    }
+//    @org.testng.annotations.Factory(dataProviderClass= MuleDataProvider.class,dataProvider="muleDataProvider")
+//    public MavenAutomationTest(String mule_home, String muleStartCommand) throws MalformedURLException {
+//        this.mule_home = mule_home;
+//        this.muleStartCommand = muleStartCommand;
+//    }
 
     @BeforeClass
     public void deployAndRunMule() throws IOException, InterruptedException {
@@ -47,6 +47,10 @@ public class MavenAutomationTest {
         String shellScriptFolder = getClass().getResource("/stopMule.sh").getPath().replace("/stopMule.sh", "");
         String pathToRaml = getClass().getResource("/interop.raml").getPath();
         String testFolder = pathToRaml.replace("/interop.raml", "");
+
+        System.out.println("mule.home=" + mule_home);
+        System.out.println("mule.start.command=" + muleStartCommand);
+        System.out.println("apikit.version=" + apikitVersion);
 
         raml = Utilities.getRamlFromFile();
         Utilities.executeCommand("sh " +  getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);

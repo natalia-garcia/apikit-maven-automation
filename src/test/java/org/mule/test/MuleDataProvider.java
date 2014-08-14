@@ -13,14 +13,18 @@ import java.util.List;
  */
 public class MuleDataProvider {
 
+    private static String pathToEEDistributions;
+
     @DataProvider(parallel = false)
-    public static Iterator<Object[]> muleDataProvider (ITestContext context) {
+    public static Iterator<Object[]> muleDataProvider(ITestContext context) {
         List<Object[]> dataToBeReturned = new ArrayList<Object[]>();
 
+        pathToEEDistributions = MuleDataProvider.class.getResource("/distributions/someFile.txt").getPath().replace("/someFile.txt","");
 //         dataToBeReturned.add(new String[]{"/Users/natalia.garcia/Standalone/api-gateway-standalone-0.9.1-SNAPSHOT", "gateway"});
 //         dataToBeReturned.add(new String[]{"/Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.5.0", "mule"});
 //        dataToBeReturned.add(new String[]{"/Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.4.2", "mule"});
-        dataToBeReturned.add(new String[]{"/Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.6.0-M1-SNAPSHOT", "mule"});
+//        dataToBeReturned.add(new String[]{"/Users/natalia.garcia/Standalone/mule-enterprise-standalone-3.6.0-M1-SNAPSHOT", "mule"});
+        dataToBeReturned.add(new String[]{pathToEEDistributions + "/mule-enterprise-standalone-" + System.getProperty("MULE_VERSION"), "mule"});
         return dataToBeReturned.iterator();
 
     }
