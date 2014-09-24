@@ -12,8 +12,8 @@
         <mule.version>3.5.0</mule.version>
         <mule.start.command>mule</mule.start.command>
         <apikit.version>1.4.3</apikit.version>
-        <mule.distribution>mule-ee-distribution-standalone</mule.distribution>
-        <mule.distribution.group.id>com.mulesoft.muleesb.distributions</mule.distribution.group.id>
+        <artifact.id>mule-ee-distribution-standalone</artifact.id>
+        <group.id>com.mulesoft.muleesb.distributions</group.id>
     </properties>
 
     <dependencies>
@@ -81,8 +81,8 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>${mule.distribution.group.id}</groupId>
-                                    <artifactId>${mule.distribution}</artifactId>
+                                    <groupId>${group.id}</groupId>
+                                    <artifactId>${artifact.id}</artifactId>
                                     <version>${mule.version}</version>
                                     <type>tar.gz</type>
                                     <outputDirectory>${project.build.directory}/test-classes/distributions</outputDirectory>
@@ -120,10 +120,10 @@
                             <property>mule.start.command</property>
                         </requireProperty>
                         <requireProperty>
-                            <property>mule.distribution</property>
+                            <property>artifact.id</property>
                         </requireProperty>
                         <requireProperty>
-                            <property>mule.distribution.group.id</property>
+                            <property>group.id</property>
                         </requireProperty>
                         <requireProperty>
                             <property>mule.version</property>
