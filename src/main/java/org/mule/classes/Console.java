@@ -63,21 +63,9 @@ public class Console {
 
     public WebElement findElementByCssSelector(final String cssSelector) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 50);
-        //webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
         WebElement webElement = driver.findElementByCssSelector(cssSelector);
-//        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-//                .withTimeout(30, TimeUnit.SECONDS)
-//                .pollingEvery(2, TimeUnit.SECONDS)
-//                .ignoring(NoSuchElementException.class);
-//
-//        WebElement webElement = wait.until(new Function<WebDriver, WebElement>() {
-//                                               public WebElement apply(WebDriver driver) {
-//                                                   return driver.findElement(By.cssSelector(cssSelector));
-//                                               }
-//                                           }
-//        );
-//        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0,"+ webElement.getLocation().y+")");
+
         return webElement;
     }
 
@@ -127,7 +115,6 @@ public class Console {
 
     public boolean inApi(){
 
-//        driver.navigate().refresh();
         if (driver.findElements(By.cssSelector("i.icon-remove.collapse")).size() > 0) {
             WebElement popupCloseButton = popupCloseButton();
             popupCloseButton.click();

@@ -35,12 +35,6 @@ public class MavenAutomationTest {
     private Console console;
     private Raml raml;
 
-//    @org.testng.annotations.Factory(dataProviderClass= MuleDataProvider.class,dataProvider="muleDataProvider")
-//    public MavenAutomationTest(String mule_home, String muleStartCommand) throws MalformedURLException {
-//        this.mule_home = mule_home;
-//        this.muleStartCommand = muleStartCommand;
-//    }
-
     @BeforeClass
     public void deployAndRunMule() throws IOException, InterruptedException {
 
@@ -157,8 +151,6 @@ public class MavenAutomationTest {
         WebElement getButton = console.getButton();
         getButton.click();
 
-        //String body = console.getBody();
-
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpget = new HttpGet(urlItem);
         CloseableHttpResponse response = httpClient.execute(httpget);
@@ -175,22 +167,4 @@ public class MavenAutomationTest {
         Utilities.executeCommand("sh " + getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);
     }
 
-
-    //    @Test
-//    public void testResources() throws Exception {
-//
-//        iterateResources(raml.getResources().values());
-//        //testResponseCode("/items");
-//    }
-
-//    private void iterateResources(Collection<Resource> resources) throws Exception {
-//
-//        for (Resource resource : resources) {
-//            testResponseCode(resource.getRelativeUri());
-//            if (!resource.getResources().isEmpty()) {
-//                iterateResources(resource.getResources().values());
-//            }
-//
-//        }
-//    }
 }
