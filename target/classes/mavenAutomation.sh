@@ -101,7 +101,8 @@ echo "*********************************************"
 
 echo cp $raml src/main/api
 cp $raml src/main/api
-
+#raml2=/Users/natalia.garcia/Drive/TestCases/RAMLs/withSecuritySchemes.raml
+#cp $raml2 src/main/api
 echo "*********************************************"
 echo "*  Remove api.raml"
 echo "*********************************************"

@@ -63,7 +63,7 @@ public class Console {
 
     public WebElement findElementByCssSelector(final String cssSelector) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 50);
-        webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
+        //webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(cssSelector)));
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
         WebElement webElement = driver.findElementByCssSelector(cssSelector);
 //        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -112,15 +112,16 @@ public class Console {
     }
 
     public void goToDocumentation(){
+        driver.navigate().refresh();
         WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
-        if (documentation.getText().equals("DOCUMENTATION →"))
+        if (documentation.getText().toLowerCase().contains("documentation"))
             documentation.click();
     }
 
     public void goToApi(){
         driver.navigate().refresh();
         WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
-        if (documentation.getText().equals("← API REFERENCE"))
+        if (documentation.getText().toLowerCase().contains("api reference"))
             documentation.click();
     }
 
@@ -134,7 +135,7 @@ public class Console {
 
         WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
 
-        if (documentation.getText().equals("DOCUMENTATION →"))
+        if (documentation.getText().toLowerCase().contains("documentation"))
             return true;
         else
             return false;
