@@ -28,7 +28,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class MavenAutomationTest {
 
-    private String mule_home = getClass().getResource("/distributions/someFile.txt").getPath().replace("someFile.txt","") + "mule-enterprise-standalone" + "-" + System.getProperty("mule.version");
+    private String mule_home = getClass().getResource("/distributions/someFile.txt").getPath().replace("someFile.txt","") + System.getProperty("artifact.id") + "-" + System.getProperty("mule.version");
     private String muleStartCommand = System.getProperty("mule.start.command");
 
     private String apikitVersion = System.getProperty("apikit.version");
