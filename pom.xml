@@ -14,6 +14,7 @@
         <apikit.version>1.4.3</apikit.version>
         <artifact.id>mule-ee-distribution-standalone</artifact.id>
         <group.id>com.mulesoft.muleesb.distributions</group.id>
+        <distribution.folder.final.name>mule-ee-standalone</distribution.folder.final.name>
     </properties>
 
     <dependencies>
@@ -87,6 +88,7 @@
                                     <version>${mule.version}</version>
                                     <type>tar.gz</type>
                                     <outputDirectory>${project.build.directory}/test-classes/distributions</outputDirectory>
+                                    <destFileName>${distribution.folder.final.name}</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -131,6 +133,9 @@
                         </requireProperty>
                         <requireProperty>
                             <property>apikit.version</property>
+                        </requireProperty>
+                        <requireProperty>
+                            <property>distribution.folder.final.name</property>
                         </requireProperty>
                     </rules>
                     <fail>false</fail>
@@ -194,4 +199,6 @@
             <url>https://repository-master.mulesoft.org/releases/</url>
         </repository>
     </repositories>
+
+
 </project>

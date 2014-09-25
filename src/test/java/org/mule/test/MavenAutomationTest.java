@@ -28,7 +28,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 public class MavenAutomationTest {
 
-    private String mule_home = getClass().getResource("/distributions/someFile.txt").getPath().replace("someFile.txt","") + System.getProperty("artifact.id") + "-" + System.getProperty("mule.version");
+    private String mule_home = getClass().getResource("/distributions/someFile.txt").getPath().replace("someFile.txt","") + System.getProperty("distribution.folder.final.name") + "-" + System.getProperty("mule.version");
     private String muleStartCommand = System.getProperty("mule.start.command");
 
     private String apikitVersion = System.getProperty("apikit.version");
@@ -49,7 +49,7 @@ public class MavenAutomationTest {
         raml = Utilities.getRamlFromFile();
         Utilities.executeCommand("sh " +  getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);
         Utilities.createAndDeployProject(shellScriptFolder, mule_home, testFolder, pathToRaml, apikitVersion, muleStartCommand);
-
+        System.out.println("Mule Home: " + mule_home);
         File deployedApp = new File(mule_home + "/apps/interopTest-1.0");
         Utilities.verifyAppHasBeenDeployed(deployedApp);
 

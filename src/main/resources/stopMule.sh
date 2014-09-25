@@ -46,6 +46,6 @@ rm conf/muleLicenseKey.lic; touch conf/.lic-mule
 echo "*********************************************"
 echo "*  Stop Mule Server"
 echo "*********************************************"
-chmod 777 $MULE_HOME/bin/mule
+# chmod 777 $MULE_HOME/bin/mule
 echo bin/$muleStartupCommand stop
 $MULE_HOME/bin/$muleStartupCommand stop

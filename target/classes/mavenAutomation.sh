@@ -134,6 +134,6 @@ mvn clean install
 
 echo cd $MULE_HOME
 cd $MULE_HOME
-echo bin/mule start
-bin/mule start
+echo bin/$muleStartCommand start
+bin/$muleStartCommand start
 
