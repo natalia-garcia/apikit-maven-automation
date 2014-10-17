@@ -8,10 +8,7 @@ import org.apache.http.util.EntityUtils;
 import org.testng.*;
 import org.openqa.selenium.WebElement;
 import org.raml.model.Raml;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,14 +50,21 @@ public class MavenAutomationTest {
         File deployedApp = new File(mule_home + "/apps/interopTest-1.0");
         Utilities.verifyAppHasBeenDeployed(deployedApp);
 
-        Thread.sleep(50000);
+        //Thread.sleep(50000);
         Utilities.verifyStatusCode(raml.getBaseUri() + "/items");
 
         console = new Console();
     }
 
+    @BeforeMethod
+    public void refreshPage()
+    {
+        console.refreshPage();
+    }
+
     @Test
-    public void testTitle() {
+    public void testTitle() throws InterruptedException {
+
         console.goToApi();
         WebElement title = console.getTitle();
         assert title.getText().equals(raml.getTitle());
@@ -101,10 +105,12 @@ public class MavenAutomationTest {
         HttpGet httpget = new HttpGet(urlItems);
         CloseableHttpResponse response = httpClient.execute(httpget);
 
+        Integer statusCode = response.getStatusLine().getStatusCode();
+
         WebElement closePopup = console.popupCloseButton();
         closePopup.click();
 
-        Assert.assertEquals(responseCode, Integer.toString(response.getStatusLine().getStatusCode()));
+        Assert.assertEquals(responseCode, Integer.toString(statusCode));
     }
 
     @Test
@@ -119,6 +125,9 @@ public class MavenAutomationTest {
         WebElement itemGetTryIt = console.tryIt();
         itemGetTryIt.click();
 
+        WebElement itemId = console.getItemId();
+        itemId.sendKeys("1");
+
         WebElement getButton = console.getButton();
         getButton.click();
 
@@ -130,15 +139,17 @@ public class MavenAutomationTest {
         HttpGet httpget = new HttpGet(urlItem);
         CloseableHttpResponse response = httpClient.execute(httpget);
 
+        Integer statusCode = response.getStatusLine().getStatusCode();
+
         WebElement closePopup = console.popupCloseButton();
         closePopup.click();
 
-        Assert.assertEquals(responseCode, Integer.toString(response.getStatusLine().getStatusCode()));
+        Assert.assertEquals(responseCode, Integer.toString(statusCode));
     }
 
     @Test
     public void testGetItemBody() throws Exception {
-
+        
         String urlItem = raml.getBaseUri() + "/items/1";
 
         WebElement itemGet = console.itemGet();
@@ -147,6 +158,9 @@ public class MavenAutomationTest {
 
         WebElement itemGetTryIt = console.tryIt();
         itemGetTryIt.click();
+
+        WebElement itemId = console.getItemId();
+        itemId.sendKeys("1");
 
         WebElement getButton = console.getButton();
         getButton.click();

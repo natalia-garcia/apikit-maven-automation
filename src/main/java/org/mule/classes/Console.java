@@ -40,8 +40,7 @@ public class Console {
         return driver;
     }
 
-    public WebElement getTitle(){
-
+    public WebElement getTitle() throws InterruptedException {
         return driver.findElementById("raml-console-api-title");
     }
 
@@ -63,7 +62,7 @@ public class Console {
 
     public WebElement findElementByCssSelector(final String cssSelector) {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 50);
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelector)));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
         WebElement webElement = driver.findElementByCssSelector(cssSelector);
 
         return webElement;
@@ -74,12 +73,11 @@ public class Console {
     }
 
     public WebElement itemsGet(){
-        driver.navigate().refresh();
+
         return findElementByCssSelector("div.resource-placeholder:nth-of-type(1) li.method-name.ng-scope.ng-binding.get");
     }
 
     public WebElement itemGet(){
-        driver.navigate().refresh();
         return findElementByCssSelector("div.resource-placeholder:nth-of-type(2) li.method-name.ng-scope.ng-binding.get");
     }
 
@@ -100,14 +98,12 @@ public class Console {
     }
 
     public void goToDocumentation(){
-        driver.navigate().refresh();
         WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
         if (documentation.getText().toLowerCase().contains("documentation"))
             documentation.click();
     }
 
     public void goToApi(){
-        driver.navigate().refresh();
         WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
         if (documentation.getText().toLowerCase().contains("api reference"))
             documentation.click();
@@ -128,4 +124,11 @@ public class Console {
             return false;
     }
 
+    public void refreshPage() {
+        driver.navigate().refresh();
+    }
+
+    public WebElement getItemId() {
+        return findElementByCssSelector("input.ng-pristine.ng-valid");
+    }
 }

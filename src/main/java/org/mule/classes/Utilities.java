@@ -106,9 +106,11 @@ public class Utilities {
     public static boolean verifyStatusCode(String url) throws IOException {
 
         Timeout timeout = new Timeout(80000);
+
         CloseableHttpClient httpClient = null;
         HttpGet httpget = null;
         CloseableHttpResponse response = null;
+        Integer statusCode =0;
 
         while (true)
         {
@@ -117,16 +119,20 @@ public class Utilities {
                 httpClient = HttpClients.createDefault();
                 httpget = new HttpGet(url);
                 response = httpClient.execute(httpget);
+                statusCode = response.getStatusLine().getStatusCode();
+            }
+            catch (Exception exception)
+            {
+                System.out.println(exception.toString());
             }
             finally {
 
-                if (response.getStatusLine().getStatusCode() == 200) {
+                if (statusCode == 200) {
                     return true;
                 } else if (timeout.hasTimedOut()) {
                     return false;
                 } else {
-                    waitFor(100);
-                    response = httpClient.execute(httpget);
+                    waitFor(1000);
                 }
             }
         }
