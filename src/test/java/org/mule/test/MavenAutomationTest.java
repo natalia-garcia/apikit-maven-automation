@@ -149,7 +149,7 @@ public class MavenAutomationTest {
 
     @Test
     public void testGetItemBody() throws Exception {
-        
+
         String urlItem = raml.getBaseUri() + "/items/1";
 
         WebElement itemGet = console.itemGet();
