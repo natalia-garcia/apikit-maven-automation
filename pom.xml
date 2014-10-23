@@ -169,12 +169,12 @@
         <repository>
             <id>mule-ee-releases</id>
             <layout>default</layout>
-            <url>http://repository.mulesoft.org/nexus/content/repositories/ci-releases/</url>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/ci-releases/</url>
         </repository>
         <repository>
             <id>mule-ee-snapshots</id>
             <layout>default</layout>
-            <url>http://repository.mulesoft.org/nexus/content/repositories/ci-snapshots/</url>
+            <url>https://repository.mulesoft.org/nexus/content/repositories/ci-snapshots/</url>
         </repository>
         <repository>
             <id>nexus.repository</id>
