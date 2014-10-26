@@ -30,9 +30,16 @@ public class Console {
     }
 
     private void setDriver() throws MalformedURLException {
-
+        String remoteURL = "http://muleion:27696dec-0aa5-429c-ae5e-d9c11022fc5a@ondemand.saucelabs.com:80/wd/hub";
         DesiredCapabilities capabillities = DesiredCapabilities.chrome();
-        driver = new RemoteWebDriver(new URL("http://localhost:9515"), capabillities);
+        capabillities.setCapability("platform", Platform.XP);
+        capabillities.setCapability("selenium-version", "2.23.0");
+        capabillities.setCapability("name", "apikit-automation");
+        capabillities.setCapability("command-timeout", 300);
+        capabillities.setCapability("idle-timeout", 300);
+        capabillities.setCapability("screen-resolution", "1280x1024");
+        //driver = new RemoteWebDriver(new URL("http://localhost:9515"), capabillities);
+        driver = new RemoteWebDriver(new URL(remoteURL), capabillities);
         driver.get("http://localhost:8081/api/console/");
     }
 
