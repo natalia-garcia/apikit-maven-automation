@@ -86,7 +86,7 @@ app=interopTest
 
 rm -rf $app
 echo mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=$version -DgroupId=org.mule -DartifactId=$app -Dversion=1.0 -B
-mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=$version -DgroupId=org.mule -DartifactId=$app -Dversion=1.0 -B
+mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=$version -DgroupId=org.mule -DartifactId=$app -Dversion=1.0 -B --settings /private/muleion/conf/cloud-settings.xml
 
 cd $app
 pwd
@@ -124,13 +124,13 @@ echo "*  Scaffold project"
 echo "*********************************************"
 
 echo mvn org.mule.tools:apikit-maven-plugin:$version:create 
-mvn org.mule.tools:apikit-maven-plugin:$version:create 
+mvn org.mule.tools:apikit-maven-plugin:$version:create --settings /private/muleion/conf/cloud-settings.xml
 
 echo "*********************************************"
 echo "*  Install app"
 echo "*********************************************"
 echo mvn clean install
-mvn clean install
+mvn clean install --settings /private/muleion/conf/cloud-settings.xml
 
 echo cd $MULE_HOME
 cd $MULE_HOME
