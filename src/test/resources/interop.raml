@@ -133,7 +133,7 @@ securitySchemes:
                 403:
                     description: |
                         Bad OAuth request (wrong consumer key, bad nonce, expired
-                        timestamp...). Unfortunately, re-authenticating the user won't help here.
+                        timestamp...). Unfortunately, re-authenticating the user wont help here.
         settings:
           authorizationUri: http://localhost:9999/authorize
           accessTokenUri: http://localhost:9999/access-token
@@ -220,34 +220,6 @@ securitySchemes:
       body:
         application/json:
           schema: Items
-#        application/x-www-form-urlencoded:
-#          formParameters:
-#            Id: 
-#              description: Id of the item
-#              type: integer
-#              required: false
-#              example: 123
-#            Code: 
-#              description: Code of the item
-#              type: string
-#              required: false
-#              example: "AD-12"
-#            Color: 
-#              description: Color of the item
-#              type: string
-#              required: false              
-#              example: "blue"
-#            Size: 
-#              description: Size of the item
-#              type: string
-#              required: false
-#              enum: [small, medium, large]              
-#              example: "medium"
-#            Description: 
-#              description: Description of the item
-#              type: string
-#              required: false              
-#              example: "Borders in light blue" 
       responses: 
         201: 
           description: Item successfully updated.

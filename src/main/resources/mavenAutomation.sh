@@ -86,7 +86,7 @@ app=interopTest
 
 rm -rf $app
 echo mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=$version -DgroupId=org.mule -DartifactId=$app -Dversion=1.0 -B
-mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=$version -DgroupId=org.mule -DartifactId=$app -Dversion=1.0 -B --settings /private/muleion/conf/cloud-settings.xml
+mvn archetype:generate -DarchetypeGroupId=org.mule.tools -DarchetypeArtifactId=apikit-archetype -DarchetypeVersion=$version -DgroupId=org.mule -DartifactId=$app -Dversion=1.0 -B
 
 cd $app
 pwd
@@ -124,16 +124,24 @@ echo "*  Scaffold project"
 echo "*********************************************"
 
 echo mvn org.mule.tools:apikit-maven-plugin:$version:create 
-mvn org.mule.tools:apikit-maven-plugin:$version:create --settings /private/muleion/conf/cloud-settings.xml
+mvn org.mule.tools:apikit-maven-plugin:$version:create
 
 echo "*********************************************"
 echo "*  Install app"
 echo "*********************************************"
 echo mvn clean install
-mvn clean install --settings /private/muleion/conf/cloud-settings.xml
+mvn clean install
 
 echo cd $MULE_HOME
 cd $MULE_HOME
 echo bin/$muleStartCommand start
 bin/$muleStartCommand start
 
+# echo "*********************************************"
+# echo "*  Add standalone console"
+# echo "*********************************************"
+
+# cat $MULE_HOME/apps/interopTest-1.0/mule-config.xml | ./script.pl > temp.xml
+# mv temp.xml $MULE_HOME/apps/interopTest-1.0/mule-config.xml
+# rm temp.xml
+# touch $MULE_HOME/apps/interopTest-1.0/mule-config.xml

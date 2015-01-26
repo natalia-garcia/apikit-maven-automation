@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.mule</groupId>
     <artifactId>apikitStandaloneAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!--<packaging>pom</packaging>-->
 
     <properties>
         <mule.version>3.5.0</mule.version>
@@ -15,6 +14,8 @@
         <artifact.id>mule-ee-distribution-standalone</artifact.id>
         <group.id>com.mulesoft.muleesb.distributions</group.id>
         <distribution.folder.final.name>mule-ee-standalone</distribution.folder.final.name>
+        <mule.home>${project.build.directory}/test-classes/distributions/${distribution.folder.final.name}-${mule.version}</mule.home>
+        <application.name>interopTest-1.0</application.name>
     </properties>
 
     <dependencies>
@@ -52,22 +53,19 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.17</version>
-                    <configuration>
-                        <suiteXmlFiles>
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
-                        </suiteXmlFiles>
-                        <forkMode>never</forkMode>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -141,6 +139,64 @@
                     <fail>false</fail>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>create-apikit-project-and-deploy</id>
+                        <phase>generate-test-resources</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <exec executable="sh">
+                                    <arg value="${project.basedir}/src/main/resources/mavenAutomation.sh"/>
+                                    <arg value="-p"/>
+                                    <arg value="${mule.home}"/>
+                                    <arg value="-v"/>
+                                    <arg value="${apikit.version}"/>
+                                    <arg value="-a"/>
+                                    <arg value="${project.basedir}/src/test/resources"/>
+                                    <arg value="-r"/>
+                                    <arg value="${project.basedir}/src/test/resources/interop.raml"/>
+                                    <arg value="-s"/>
+                                    <arg value="${mule.start.command}"/>
+                                </exec>
+                                <exec executable="ls">
+                                    <arg value="${mule.home}/apps/"/>
+                                </exec>
+                                <echo message="Wait for ${mule.home}/apps/${application.name}-anchor.txt to be available."/>
+                                <waitfor maxwait="60" maxwaitunit="second" checkevery="500">
+                                    <available file="${mule.home}/apps/${application.name}-anchor.txt"/>
+                                </waitfor>
+                                <exec executable="ls">
+                                    <arg value="${mule.home}/apps/"/>
+                                </exec>
+                                <echo message="**********************************"/>
+                                <echo message="* Project created and depoloyed. *"/>
+                                <echo message="**********************************"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop-gateway</id>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <exec executable="${mule.home}/bin/${mule.start.command}">
+                                    <arg value="stop"/>
+                                </exec>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -200,6 +256,4 @@
         </repository>
     </repositories>
 
-
 </project>
-        

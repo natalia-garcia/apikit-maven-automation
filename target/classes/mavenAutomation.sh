@@ -124,7 +124,7 @@ echo "*  Scaffold project"
 echo "*********************************************"
 
 echo mvn org.mule.tools:apikit-maven-plugin:$version:create 
-mvn org.mule.tools:apikit-maven-plugin:$version:create 
+mvn org.mule.tools:apikit-maven-plugin:$version:create
 
 echo "*********************************************"
 echo "*  Install app"
@@ -137,3 +137,11 @@ cd $MULE_HOME
 echo bin/$muleStartCommand start
 bin/$muleStartCommand start
 
+# echo "*********************************************"
+# echo "*  Add standalone console"
+# echo "*********************************************"
+
+# cat $MULE_HOME/apps/interopTest-1.0/mule-config.xml | ./script.pl > temp.xml
+# mv temp.xml $MULE_HOME/apps/interopTest-1.0/mule-config.xml
+# rm temp.xml
+# touch $MULE_HOME/apps/interopTest-1.0/mule-config.xml
