@@ -63,7 +63,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
+                    <systemPropertyVariables>
+                        <app.name>${application.name}</app.name>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>

@@ -32,7 +32,7 @@ my $snippet = <<EOD;
         </cors:origins>
     </cors:config>
     <flow name="main" doc:name="main">
-        <http:inbound-endpoint doc:name="HTTP" exchange-pattern="request-response" host="localhost" path="api" port="9031">
+        <http:inbound-endpoint doc:name="HTTP" exchange-pattern="request-response" host="localhost" path="api" port="9091">
             <api-platform-gw:register-as apikit-ref="apiConfig" />
         </http:inbound-endpoint>
         <cors:validate config-ref="Cors_Configuration" publicResource="false" acceptsCredentials="false" doc:name="CORS Validate" />

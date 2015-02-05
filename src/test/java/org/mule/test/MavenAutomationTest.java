@@ -6,6 +6,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.openqa.selenium.NoSuchElementException;
 import org.raml.emitter.RamlEmitter;
 import org.testng.*;
 import org.openqa.selenium.WebElement;
@@ -29,6 +30,7 @@ public class MavenAutomationTest {
 
     private String mule_home = getClass().getResource("/distributions/someFile.txt").getPath().replace("someFile.txt","") + System.getProperty("distribution.folder.final.name") + "-" + System.getProperty("mule.version");
     private String muleStartCommand = System.getProperty("mule.start.command");
+    private String applicationName = System.getProperty("app.name");
     private Console console;
     private Raml raml;
 
@@ -38,34 +40,22 @@ public class MavenAutomationTest {
         raml = Utilities.getRamlFromFile();
         console = new Console();
         console.loadRaml(raml);
-
+        Utilities.updateConfig(mule_home, applicationName);
+        Utilities.executeCommand("touch " + mule_home + "/apps/" + applicationName + "mule-config.xml");
+        Thread.sleep(20000);
+        System.out.println("Config after updates is: \n" + Utilities.getStringFromFile(mule_home + "/apps/" + applicationName + "mule-config.xml"));
     }
-//
-//    @BeforeMethod
-//    public void refreshPage() throws InterruptedException {
-//        console.refreshPage();
-//        console.loadRaml(raml);
-//    }
 
     @Test
     public void testTitle() throws InterruptedException {
-
         WebElement title = console.getTitle();
         assert title.getText().equals(raml.getTitle());
     }
 
     @Test
     public void testDocumentationTitle() {
-
-//        if(console.inApi())
-//            console.goToDocumentation();
-
         WebElement documentationTitle = console.getDocumentationTitle();
-
-        System.out.println("Documentation Title: " + documentationTitle.getText());
         assert documentationTitle.getText().equals("Interop documentation");
-
-//        console.goToApi();
     }
 
     @Test
@@ -73,18 +63,27 @@ public class MavenAutomationTest {
 
         String relativeUri = "/items";
 
-        WebElement itemsGet = console.itemsGet();
-        itemsGet.click();
-//
-//        WebElement itemsGetTryIt = console.tryIt();
-//        itemsGetTryIt.click();
+        WebElement itemsGetTab = console.itemsGetTab();
+        itemsGetTab.click();
 
-        WebElement getButton = console.getButton();
-        getButton.click();
+        WebElement itemsGetTryIt;
+        Boolean present;
+        try {
+            itemsGetTryIt  = console.tryIt();
+            itemsGetTryIt.click();
+            present = true;
+        } catch (NoSuchElementException e) {
+            present = false;
+        }
 
-        String responseCode = console.getResponseCode().getText();
+        WebElement itemsGetButton = console.itemsGetButton();
+        itemsGetButton.click();
+
+//        String responseCode = console.getResponseCode().getText();
+//        System.out.println("ResponseCode: " + responseCode);
 //
 //        String urlItems = raml.getBaseUri() + relativeUri;
+//        System.out.println("HttpClient url: " + urlItems);
 //
 //        CloseableHttpClient httpClient = HttpClients.createDefault();
 //        HttpGet httpget = new HttpGet(urlItems);
@@ -162,7 +161,7 @@ public class MavenAutomationTest {
 
     @AfterClass
     public void stopMule() throws IOException {
-        console.quit();
+//        console.quit();
         Utilities.executeCommand("sh " + getClass().getResource("/stopMule.sh").getPath() + " -p " + mule_home + " -s " + muleStartCommand);
     }
 

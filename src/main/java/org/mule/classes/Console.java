@@ -26,7 +26,6 @@ public class Console {
 
     public Console() throws MalformedURLException, InterruptedException {
         setDriver();
-        driver.navigate().refresh();
     }
 
     public void quit(){
@@ -44,8 +43,6 @@ public class Console {
     }
 
     public WebElement getRamlTextArea() throws InterruptedException {
-//        return driver.findElementById("raml");
-//        return driver.findElementByCssSelector("raml-console-initializer-input-container");
         return driver.findElementByCssSelector("div.CodeMirror-code pre");
     }
 
@@ -58,7 +55,6 @@ public class Console {
     }
 
     public WebElement getTitle() throws InterruptedException {
-//        return driver.findElementById("raml-console-api-title");
         return driver.findElementByCssSelector("h1.raml-console-title.ng-binding.ng-scope");
     }
 
@@ -71,14 +67,11 @@ public class Console {
     }
 
     public WebElement getDocumentationTitle(){
-//        return findElementByCssSelector("h2.ng-binding");
         return findElementByCssSelector("li.raml-console-resource-list-item.raml-console-documentation.ng-scope");
     }
 
-    public WebElement itemsGet(){
-
-//        return findElementByCssSelector("div.resource-placeholder:nth-of-type(1) li.method-name.ng-scope.ng-binding.get");
-        return findElementByCssSelector("#items > header > div.raml-console-tab-list > div:nth-child(1) > span");
+    public WebElement itemsGetTab(){
+        return findElementByCssSelector("#items header div.raml-console-tab-list div:nth-child(1) span");
     }
 
     public WebElement itemGet(){
@@ -86,52 +79,50 @@ public class Console {
     }
 
     public WebElement tryIt() throws InterruptedException {
-        return findElementByCssSelector("ul.method-nav-group li:nth-of-type(4) a.ng-binding");
+//        return findElementByCssSelector("#items div div div.raml-console-sidebar-controls.raml-console-sidebar-controls-fullscreen button span");
+        return findElementByCssSelector("div.raml-console-sidebar-controls:nth-child(4) > button:nth-child(1)");
     }
 
     public WebElement getResponseCode() {
-        return findElementByCssSelector("div.status code.response-value.ng-binding");
+        return findElementByCssSelector("#items div div form div div div div section:nth-child(2) div p");
+
     }
 
     public WebElement popupCloseButton(){
-        return findElementByCssSelector("i.icon-remove.collapse");
+        return findElementByCssSelector("#items header button");
     }
 
-    public WebElement getButton() {
-//        return findElementByCssSelector("button.ng-binding.btn-get");
-        return findElementByCssSelector("#items div div form div div div section:nth-child(4) div div button.raml-console-sidebar-action.raml-console-sidebar-action-get");
+    public WebElement itemsGetButton() {
+//        return findElementByCssSelector("#items div div form div div div section:nth-child(4) div div button.raml-console-sidebar-action.raml-console-sidebar-action-get");
+        return findElementByCssSelector("button.raml-console-sidebar-action-get");
     }
 
-    public void goToDocumentation(){
-        WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
-        if (documentation.getText().toLowerCase().contains("documentation"))
-            documentation.click();
-    }
-
-    public void goToApi(){
-        WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
-        if (documentation.getText().toLowerCase().contains("api reference"))
-            documentation.click();
-    }
-
-    public boolean inApi(){
-
-        if (driver.findElements(By.cssSelector("i.icon-remove.collapse")).size() > 0) {
-            WebElement popupCloseButton = popupCloseButton();
-            popupCloseButton.click();
-        }
-
-        WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
-
-        if (documentation.getText().toLowerCase().contains("documentation"))
-            return true;
-        else
-            return false;
-    }
-
-    public void refreshPage() {
-        driver.navigate().refresh();
-    }
+//    public void goToDocumentation(){
+//        WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
+//        if (documentation.getText().toLowerCase().contains("documentation"))
+//            documentation.click();
+//    }
+//
+//    public void goToApi(){
+//        WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
+//        if (documentation.getText().toLowerCase().contains("api reference"))
+//            documentation.click();
+//    }
+//
+//    public boolean inApi(){
+//
+//        if (driver.findElements(By.cssSelector("i.icon-remove.collapse")).size() > 0) {
+//            WebElement popupCloseButton = popupCloseButton();
+//            popupCloseButton.click();
+//        }
+//
+//        WebElement documentation = findElementByCssSelector("a.btn.ng-scope");
+//
+//        if (documentation.getText().toLowerCase().contains("documentation"))
+//            return true;
+//        else
+//            return false;
+//    }
 
     public WebElement getItemId() {
         return findElementByCssSelector("input.ng-pristine.ng-valid");
@@ -147,7 +138,6 @@ public class Console {
         for (int i = 0; i < ramlArray.length; i++) {
             driver.executeScript("jQuery('.CodeMirror')[0].CodeMirror.setLine(" + i + ", '" + ramlArray[i] + " \\n')");
         }
-
     }
 
     public void loadRaml(Raml raml) throws InterruptedException {
@@ -155,4 +145,5 @@ public class Console {
         WebElement loadRamlButton = getLoadRamlButton();
         loadRamlButton.click();
     }
+
 }

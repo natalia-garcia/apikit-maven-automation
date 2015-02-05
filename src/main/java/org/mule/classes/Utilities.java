@@ -2,8 +2,9 @@ package org.mule.classes;
 
 import org.apache.commons.exec.ExecuteException;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 import org.apache.commons.exec.CommandLine;
@@ -137,5 +138,70 @@ public class Utilities {
             }
         }
 
+    }
+
+    public static String getStringFromFile(String path) throws IOException {
+
+        File file = new File(path);
+        BufferedReader reader = new BufferedReader( new FileReader(file));
+        String         line = null;
+        StringBuilder  stringBuilder = new StringBuilder();
+        String         ls = System.getProperty("line.separator");
+
+        while( ( line = reader.readLine() ) != null ) {
+            stringBuilder.append( line );
+            stringBuilder.append( ls );
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public static void updateConfig(String mule_home, String applicationName) throws IOException {
+
+        String configPath = mule_home + "/apps/" + applicationName + "/mule-config.xml";
+        String originalConfig= getStringFromFile(configPath);
+
+        String updatedFlows = "<cors:config name=\"Cors_Configuration\" >\n" +
+                "        <cors:origins>\n" +
+                "            <cors:origin url=\"http://ec2-54-69-7-25.us-west-2.compute.amazonaws.com:9000\">\n" +
+                "                <cors:methods>\n" +
+                "                    <cors:method>POST</cors:method>\n" +
+                "                    <cors:method>PUT</cors:method>\n" +
+                "                    <cors:method>DELETE</cors:method>\n" +
+                "                    <cors:method>GET</cors:method>\n" +
+                "                </cors:methods>\n" +
+                "                <cors:headers>\n" +
+                "                    <cors:header>content-type</cors:header>\n" +
+                "                </cors:headers>\n" +
+                "            </cors:origin>\n" +
+                "        </cors:origins>\n" +
+                "    </cors:config>" +
+                "<flow name=\"api-main\">\n" +
+                "        <http:inbound-endpoint exchange-pattern=\"request-response\" host=\"localhost\" path=\"api\" port=\"9091\" />\n" +
+                "        <cors:validate config-ref=\"Cors_Configuration\" publicResource=\"false\" acceptsCredentials=\"false\" />\n" +
+                "        <apikit:router config-ref=\"apiConfig\" />\n" +
+                "        <exception-strategy ref=\"apiKitGlobalExceptionMapping\" />\n" +
+                "    </flow>\n" +
+                "    <flow name=\"api-console\">\n" +
+                "        <http:inbound-endpoint exchange-pattern=\"request-response\" host=\"localhost\" port=\"9090\" path=\"console\" />\n" +
+                "        <apikit:console config-ref=\"apiConfig\"  />\n" +
+                "    </flow>\n" +
+                "    <flow name=\"put:/items/{itemId}:application/json:apiConfig\">\n";
+
+        originalConfig = originalConfig.replaceAll("(?s)<flow name=\"api-main\"*(.*)<flow name=\"put:/items/\\{itemId\\}:application/json:apiConfig\">", updatedFlows);
+
+        originalConfig = originalConfig.replace("<mule ", "<mule xmlns:cors=\"http://www.mulesoft.org/schema/mule/cors\" \n");
+        originalConfig = originalConfig.replace("xsi:schemaLocation=\"", "xsi:schemaLocation=\"http://www.mulesoft.org/schema/mule/cors http://www.mulesoft.org/schema/mule/cors/current/mule-cors.xsd \n");
+        writeStringToFile(configPath, originalConfig);
+
+    }
+
+    public static void writeStringToFile(String path, String originalConfig) throws IOException {
+
+        File file = new File(path);
+        FileWriter fileWriter = new FileWriter(file, false);
+
+        fileWriter.write(originalConfig);
+        fileWriter.close();
     }
 }

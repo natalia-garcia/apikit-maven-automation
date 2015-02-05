@@ -1,10 +1,23 @@
 #%RAML 0.8
 title: Interop Testing
 version: v1.0
-baseUri: http://localhost:8081/api
+baseUri: http://localhost:9091/api
 documentation:
   - title: Interop documentation
-    content: Some content
+    content: |
+      First section of documentation
+  - title: Second section
+    content: |
+      This is the second section of the documentation.
+      It is multiline so verify it is displaying it properly.
+  - title: Third section
+    content: |
+      When you run out of imagination... use Lorem ipsum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt arcu vel dui aliquet cursus.
+      In nec ex pellentesque, hendrerit metus id, dapibus sapien. Curabitur turpis mi, hendrerit id quam in, fermentum faucibus libero.
+      Maecenas auctor, risus quis ultrices maximus, augue enim pretium risus, in blandit quam odio commodo ex.
+      Nam sit amet diam fringilla, consequat leo at, tincidunt enim. In tincidunt diam in erat molestie malesuada. Fusce id nulla libero. Vestibulum et ornare eros. Nunc malesuada leo ut euismod malesuada.
+      Phasellus rutrum neque at nulla ultricies, nec pellentesque tellus pellentesque. Ut nec venenatis risus. Aenean in sem auctor, tincidunt dui at, sollicitudin diam. Praesent et sapien et elit finibus dapibus.
 mediaType: application/json
 resourceTypes:
   - collection:
