@@ -95,6 +95,8 @@ public class Console {
     public WebElement itemsGetButton() {
 //        return findElementByCssSelector("#items div div form div div div section:nth-child(4) div div button.raml-console-sidebar-action.raml-console-sidebar-action-get");
         return findElementByCssSelector("button.raml-console-sidebar-action-get");
+//        WebElement getButton = (WebElement)((JavascriptExecutor)driver).executeScript("jQuery(\"button.raml-console-sidebar-action-get\")");
+//        return getButton;
     }
 
 //    public void goToDocumentation(){
